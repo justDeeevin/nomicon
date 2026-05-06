@@ -139,7 +139,7 @@ impl<T> Vec<T> {
         result
     }
 
-    pub fn drain(&mut self) -> Drain<T> {
+    pub fn drain(&mut self) -> Drain<'_, T> {
         let iter = unsafe { RawValIter::new(self) };
         self.len = 0;
 
